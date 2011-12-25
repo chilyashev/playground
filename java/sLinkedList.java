@@ -112,15 +112,27 @@ public class sLinkedList<T> {
     }
 
     public void clear() {
+        Node n = start.next;
+        while (n != null) {
+            Node next = n.next;
+            n.next = null;
+            n.value = null;
+            n = next;
+        }
+        start.next = start;
+        count = 0;
     }
 
     public void print() {
-        Node i;
-        System.out.print("[");
-        for (i = this.start; i != null; i = i.next) {
-            String s = (i.next == null) ? "" : ", ";
-            System.out.print(i.value + s);
+        if (count > 0) {
+            Node i;
+            System.out.print("[");
+
+            for (i = this.start; i != null; i = i.next) {
+                String s = (i.next == null) ? "" : ", ";
+                System.out.print(i.value + s);
+            }
+            System.out.println("]");
         }
-        System.out.println("]");
     }
 }

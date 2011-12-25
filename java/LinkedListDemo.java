@@ -10,8 +10,8 @@ public class LinkedListDemo {
         st = System.currentTimeMillis();
         Random r = new Random();
         for (int i = 0; i < 10; i++) {
-            System.out.println("Adding " + r.nextInt(i + 1));
-            s.add(i + 1);
+            System.out.println("Adding " + (i+1));
+            s.add(i+1);
         }
         System.out.println("Contents: ");
         s.print();
@@ -24,7 +24,10 @@ public class LinkedListDemo {
         s.remove(new Integer(8));
         System.out.println("Contents now: ");
         s.print();
-
+        System.out.println("Clearing.");
+        s.clear();
+        System.out.println("Contents now: ");
+        s.print();
         t = System.currentTimeMillis() - st;
         System.out.println("Demo finished in " + t + "ms");
     }
